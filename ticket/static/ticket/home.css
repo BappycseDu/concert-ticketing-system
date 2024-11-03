@@ -1,0 +1,132 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main content styling */
+main {
+    flex: 1; /* Allows main to take up available space */
+    padding: 1rem;
+    position: relative; /* Position relative for absolutely positioned content if needed */
+    overflow: hidden; /* Hide any overflow from background */
+}
+
+/* Background slideshow */
+@keyframes slideShow {
+    0% { background-image: url('./1.jpeg'); }
+    33% { background-image: url('./2.jpeg'); }
+    66% { background-image: url('./3.jpeg'); }
+    100% { background-image: url('./4.jpeg'); }
+}
+
+main {
+    animation: slideShow 30s infinite;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Ensure you have a fallback color if needed */
+    background-color: #000; /* Fallback color in case images fail to load */
+}
+
+/* Header styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styling */
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.footer-content > div {
+    flex: 1;
+    margin: 0 1rem;
+    min-width: 200px;
+}
+
+.footer-content h2 {
+    margin-bottom: 1rem;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+}
+
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin: 0.5rem 0;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+}
+
+.footer-bottom p {
+    margin: 0.5rem 0;
+}
+
+.footer-bottom a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}

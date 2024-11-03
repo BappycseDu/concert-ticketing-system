@@ -1,0 +1,103 @@
+{% load static %}
+DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concert Ticket Purchase</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'ticket/purchasing_ticket.css' %}">
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-3">
+        <h1>Concert Ticket Purchase</h1>
+    </header>
+
+    <main class="container my-5">
+        <section class="row">
+            <!-- Ticket Details -->
+            <div class="col-md-6">
+                <div class="card">
+                     <img src="{% static 'ticket/james.jpg' %}" alt="{{ event.name }} Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Live Concert with The Awesome Band</h5>
+                        <h1>{{ event1.title }}</h1>
+                        <p><strong>Date:</strong> {{ event.date|date:"F j, Y" }}</p>
+                        <p><strong>Time:</strong> {{ event.time}}</p>
+                        <p><strong>Location:</strong> {{ event.venue}}</p>      
+                        <p><strong>Price:</strong> 300 BDT</p>
+                        </div>
+                </div>
+            </div>
+
+            <!-- Ticket Purchase Form -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Purchase Tickets</h4>
+                       <form method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                     {% csrf_token %}
+                                     {{ form.as_p }}
+                            </div>
+                            <button type="submit" class="btn btn-primary">Proceed to Payment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Concert Events. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+<!-- 
+
+{% load custom_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Ticket</title>
+    <link rel="stylesheet" href="{% static 'ticket/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Purchase Ticket  </h1>
+       
+        
+        <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+
+   
+
+
+        <button type="submit">Purchase</button>
+    </form>
+    </div>
+    
+    <script>
+        // Update total price based on quantity selected
+        document.getElementById('quantity').addEventListener('change', function() {
+            var quantity = this.value;
+            var price = "{{ event.price|escapejs }}";; 
+            document.getElementById('total_price').value = quantity * price;
+        });
+    </script>
+</body>
+</html>
+-->

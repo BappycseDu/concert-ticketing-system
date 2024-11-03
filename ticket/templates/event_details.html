@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concert Event Details</title>
+     <link rel="stylesheet" href="{% static 'ticket/event_details.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Concert Event Details</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home page </a></li>
+                <li><a href="{% url 'event_details' %}">details of this concert</a></li>
+                <li><a href="#">purchase ticket</a></li>
+                <li><a href="#">Concerts</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="event-details">
+            <h2>Live Concert with The Awesome Band</h2>
+            <div class="event-info">
+                <div class="event-image">
+                    <img src="{% static 'ticket/james.jpg' %}" alt="{{ event1.name }} Image">
+                </div>
+                <div class="event-meta">
+                    <h1>{{ event1.title }}</h1>
+                    <p><strong>Date:</strong> {{ event1.date|date:"F j, Y" }}</p>
+                    <p><strong>Time:</strong> {{ event1.time}}</p>
+                    <p><strong>Location:</strong> {{ event1.venue }}</p>      
+                    <h3>Lineup</h3>
+                    <p>The Awesome Band</p>
+                    <p>Special Guest: The Opening Act</p>   
+                    <h3>About the Concert</h3>
+                    <p>{{ event1.description }}</p>    
+                    <div class="event-tickets">
+                        <h3>Tickets</h3>
+                        <p><strong>Price:</strong> 300 BDT</p>
+                        <p><a href="{% url 'purchasing_ticket' %}" class="btn">Buy Tickets</a></p>
+                    </div>
+
+                </div>
+           </div>
+        
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Concert Events. All rights reserved.</p>
+    </footer>
+</body>
+</html>

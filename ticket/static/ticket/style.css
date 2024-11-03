@@ -1,0 +1,259 @@
+/* General Styles */
+
+/* Header */
+
+ header {
+        position: fixed; /* Keeps the header at the top */
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #285e61; /*use background for semi transparen */
+        z-index: 1000; /* Ensure it is above other content */
+        padding: 10px;
+        text-align: center;
+    }
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    font-style:italic;
+    justify-content: center;
+    color: #ddd;
+    
+}
+.content {
+    position: relative; /* or absolute, depending on your layout */
+    z-index: 500; /* Higher than background but lower than header if needed */
+}
+header p {
+    font-size: 18px;
+}#E6E6FA
+
+/* Navigation Bar */
+nav {
+    background-color: #285e61;
+    overflow: hidden;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    text-emphasis-color: #f0f0f5 ;
+}
+
+
+
+
+nav ul li {
+    margin: 0;
+    padding: 14px 20px;
+}
+
+nav ul li a {
+    color: hsl(0, 17%, 93%);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: large;
+}
+
+nav ul li a:hover {
+    
+    font-size: larger;
+}
+
+/* Main Content Area */
+
+
+.ticket {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+#E6E6FA
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.ticket p {
+    margin: 0 0 10px 0;
+}
+
+.ticket-price {
+    font-size: 22px;
+    color: #2c7a7b;
+    margin-bottom: 20px;
+}
+
+/* Purchase Button */
+.purchase-button {
+    background-color: #e53e3e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.purchase-button:hover {
+    background-color: #c53030;
+}
+
+/* Footer */
+footer {
+    background-color: #285e61;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 2px;
+}
+
+
+
+
+
+
+/* style.css */
+body {
+    
+    margin: 0;
+    overflow: hidden;
+}
+
+.slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-size: cover;
+    background-position: center;
+    animation: slideShow 15s infinite;
+}
+@keyframes slideShow {
+    0% { background-image: url("./1.jpeg"); }
+    33% { background-image: url("../ticket/2.jpeg"); }
+    66% { background-image: url("../ticket/3.jpeg"); }
+    100% { background-image: url("../ticket/4.jpg"); }
+}
+
+.slide {
+    display: none;
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    max-height: max-content; /* Set the height you prefer */
+    object-fit: cover;
+}
+
+.dots-container {
+    text-align: center;
+    padding: 10px;
+    background: #ddd;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fade Animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: 0.4} 
+    to {opacity: 1}
+}
+form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    border-color: #5b9bd5;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+button {
+    background-color: #5b9bd5;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4a8ac6;
+}

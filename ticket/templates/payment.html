@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'ticket/payment.css' %}">
+
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-3">
+        <h1>Payment Information</h1>
+    </header>
+
+    <main class="container my-5">
+        <section class="row">
+            <!-- Payment Form -->
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Complete Your Purchase</h4>
+                        
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                        
+                                     <p><strong>Name:</strong> {{purchase_data.purchaser_name}}</p>
+                                     <p><strong>Contact Number:</strong> {{purchase_data.contact_number}}</p>
+                                     <p><strong>Quantity:</strong> {{purchase_data.quantity}}</p>
+                                     <p><strong>Total Price:</strong> {{purchase_data.price}}</p>
+                                     
+                                </div>
+                                 <form method="POST">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <button type="submit" class="btn btn-success">Submit Payment</button>
+                                </form>
+                                    
+                            </div>
+                           
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
